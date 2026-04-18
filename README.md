@@ -5,7 +5,6 @@ tip the creator with 0.0001 ETH per like.
 
 ## Live Deployment
 
-- **Frontend:** <YOUR_VERCEL_URL>
 - **Contract (Sepolia):** 0x6571c2Fc7862751b59FDD30a8454b8eBC623F2A2
 - **Etherscan:** https://sepolia.etherscan.io/address/0x6571c2Fc7862751b59FDD30a8454b8eBC623F2A2
 

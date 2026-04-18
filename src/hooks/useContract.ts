@@ -3,7 +3,13 @@ import { Contract, BrowserProvider, formatEther, parseEther } from "ethers";
 import ABI from "../abi/TipPost.json";
 import type { Post, TxState } from "../types";
 
-const CONTRACT_ADDRESS = import.meta.env.VITE_CONTRACT_ADDRESS || "";
+const CONTRACT_ADDRESS: string = import.meta.env.VITE_CONTRACT_ADDRESS ?? "";
+if (!CONTRACT_ADDRESS || !CONTRACT_ADDRESS.startsWith("0x")) {
+  throw new Error(
+    `VITE_CONTRACT_ADDRESS is not configured. Got: "${CONTRACT_ADDRESS}". ` +
+    "Ensure .env has VITE_CONTRACT_ADDRESS=0x... and restart the dev server."
+  );
+}
 const LIKE_COST = parseEther("0.0001");
 
 export function useContract(
